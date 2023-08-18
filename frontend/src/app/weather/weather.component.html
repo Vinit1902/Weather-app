@@ -1,0 +1,15 @@
+<div class="weather-container">
+    <h2>Weather App</h2>
+  
+    <div class="search-form">
+      <input type="text" [(ngModel)]="location" placeholder="Enter a city">
+      <button (click)="searchWeather()">Search</button>
+    </div>
+  
+    <div class="weather-data" *ngIf="weatherData">
+      <h3>{{ weatherData.name }}, {{ weatherData.sys.country }}</h3>
+      <p>Temperature: {{ weatherData.main.temp }}°C</p>
+      <p>Weather: {{ weatherData.weather[0].description }}</p>
+    </div>
+  </div>
+  

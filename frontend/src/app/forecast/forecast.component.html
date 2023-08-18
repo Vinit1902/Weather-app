@@ -1,0 +1,15 @@
+<div class="forecast-container">
+    <h2>7-Day Weather Forecast</h2>
+  
+    <div class="search-form">
+      <input type="text" [(ngModel)]="location" placeholder="Enter a city">
+      <button (click)="searchForecast()">Search</button>
+    </div>
+  
+    <div class="forecast-data" *ngFor="let forecast of forecastData">
+      <h3>{{ forecast.dt_txt | date:'medium' }}</h3>
+      <p>Temperature: {{ forecast.main.temp }}°C</p>
+      <p>Weather: {{ forecast.weather[0].description }}</p>
+    </div>
+  </div>
+  

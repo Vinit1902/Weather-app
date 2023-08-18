@@ -1,0 +1,15 @@
+<div class="historical-container">
+    <h2>Last 7 Days Historical Weather Data</h2>
+  
+    <div class="search-form">
+      <input type="text" [(ngModel)]="location" placeholder="Enter a city">
+      <button (click)="searchHistoricalData()">Search</button>
+    </div>
+  
+    <div class="historical-data" *ngFor="let data of historicalData">
+      <h3>{{ data.dt_txt | date:'medium' }}</h3>
+      <p>Temperature: {{ data.main.temp }}°C</p>
+      <p>Weather: {{ data.weather[0].description }}</p>
+    </div>
+  </div>
+  
